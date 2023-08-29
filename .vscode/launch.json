@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [        
+        {
+            "name": "g++ - Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/demo", // 重要，一般要修改该路径，此路径是相对activae file，与task.json中 -o输出内容一致
+            "args": [], // 存放argv参数
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            // "preLaunchTask": "run script",    // 可以注释掉，手动编译再调试，该文件对应task.json中的任务(label标签对应内容)。
+            "miDebuggerPath": "/usr/bin/gdb" // 调试器路径， linux
+            //"miDebuggerPath": "C:\\Program Files\\mingw64\\bin\\gdb.exe"
+        }
+    ]
+}
