@@ -9,8 +9,6 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -std=c++14 -O0")
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
 
 # OpenCV
-message(STATUS "ZHITO_THIRD_PARTY_DIR:${ZHITO_THIRD_PARTY_DIR}")
-set(OpenCV_DIR "${ZHITO_THIRD_PARTY_DIR}/OpenCV320/share/OpenCV")
 find_package(OpenCV 3.2 REQUIRED) # 版本设置
 include_directories(${OpenCV_INCLUDE_DIRS})
 message(STATUS "OpenCV version: ${OpenCV_VERSION}")
