@@ -38,7 +38,7 @@ void strands::run(){
 	assert(labelConnect::test());
 	assert(region::test());
 
-	auto polarity = strands::line_polarity::light;
+	auto polarity = strands::line_polarity::dark;
 	float sigma = 1.5;
 	float low_thr = 1.3;
 	float high_thr = 7.;
