@@ -40,8 +40,8 @@ void strands::run(){
 
 	auto polarity = strands::line_polarity::light;
 	float sigma = 1.5;
-	float low_thr = 1.0;
-	float high_thr = 6.0;
+	float low_thr = 1.3;
+	float high_thr = 7.;
 
 	std::string version_string(VERSION);
 	version_string = NowToString() + "build " + version_string + "\nimage file: " + m_input_file.stem().string();
@@ -80,7 +80,7 @@ void strands::run(){
 		conv.get_all_derivatives(dimg, sigma, out);
 		std::vector<int32_t> ismax;
 		std::vector<std::vector<double>> line_out;
-		class link lnk(image.cols, image.rows, 1.5, strands::line_polarity::light);
+		class link lnk(image.cols, image.rows, 1.5, polarity);
 		lnk.debug(debug());
 		lnk.compute_line_points(out, ismax, line_out, low_thr, high_thr);
 		const cv::Mat& esp = lnk.eSpace();
