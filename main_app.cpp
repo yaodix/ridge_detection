@@ -7,7 +7,7 @@
 
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>   // includes all needed Boost.Filesystem declarations
-#include "strands.h"
+#include "code/strands.h"
 
 using namespace std;
 using namespace boost;

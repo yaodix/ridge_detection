@@ -15,6 +15,12 @@ message(STATUS "OpenCV version: ${OpenCV_VERSION}")
 message(STATUS "OpenCV_LIBS:${OpenCV_LIBS}")
 message(STATUS "OpenCV_INCLUDE_DIRS:${OpenCV_INCLUDE_DIRS}")
 
-add_executable(demo main.cc)
+# boost
+find_package(Boost REQUIRED  COMPONENTS program_options  system filesystem)
+include_directories(${Boost_INCLUDE_DIRS} )
 
-target_link_libraries(demo ${OpenCV_LIBS} pthread)
+aux_source_directory (code SRC)
+
+add_executable(demo main.cpp ${SRC})
+
+target_link_libraries(demo ${OpenCV_LIBS} ${Boost_LIBRARIES} pthread)

@@ -1,7 +1,7 @@
 #pragma once
 #include "chord.h"
 #include <vector>
-
+#include <cstdint> // include this header for uint64_t
 using namespace std;
 
 namespace stegers
